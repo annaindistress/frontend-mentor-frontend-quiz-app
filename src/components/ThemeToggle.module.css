@@ -1,0 +1,66 @@
+.toggle {
+  grid-area: toggle;
+  display: flex;
+  align-items: center;
+  border-radius: 999px;
+}
+
+.icon {
+  color: var(--color-toggle);
+}
+
+.toggle:focus-within .icon {
+  color: var(--color-dark-purple);
+}
+
+.label {
+  position: relative;
+  width: 32px;
+  height: 20px;
+  margin-inline: 8px;
+  font-size: 0;
+  border-radius: 999px;
+  background-color: var(--color-dark-purple);
+  cursor: pointer;
+}
+
+.label::after {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  display: block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: var(--color-pure-white);
+  transition: all 0.3s ease-in-out;
+}
+
+.label:has(input:checked)::after {
+  transform: translateX(100%);
+}
+
+@media (min-width: 768px) {
+  .icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .label {
+    width: 48px;
+    height: 28px;
+    margin-inline: 16px;
+  }
+
+  .label::after {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .toggle:has(.label:hover) .icon {
+    color: var(--color-dark-purple);
+  }
+}

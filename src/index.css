@@ -1,0 +1,195 @@
+:root {
+  --color-pure-white: #ffffff;
+  --color-light-gray: #f4f6fa;
+  --color-light-bluish: #abc1e1;
+  --color-grey-navy: #626c7f;
+  --color-navy: #3b4d66;
+  --color-dark-navy: #313e51;
+  --color-red: #ee5454;
+  --color-light-orange: #fff1e9;
+  --color-light-green: #e0fdef;
+  --color-green: #26d782;
+  --color-light-blue: #ebf0ff;
+  --color-light-purple: #f6e7ff;
+  --color-purple: #d394fa;
+  --color-dark-purple: #a729f5;
+
+  --pattern-body-bg: url("/images/patterns/bg-mobile-light.svg");
+
+  --color-body-bg: var(--color-light-gray);
+  --color-body-text: var(--color-dark-navy);
+  --color-toggle: var(--color-grey-navy);
+}
+
+.dark-mode {
+  --pattern-body-bg: url("/images/patterns/bg-mobile-dark.svg");
+
+  --color-body-bg: var(--color-dark-navy);
+  --color-body-text: var(--color-pure-white);
+  --color-toggle: var(--color-pure-white);
+}
+
+@font-face {
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("/fonts/rubik-300.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/rubik-400.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Rubik";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/rubik-400-italic.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/fonts/rubik-500.woff2") format("woff2");
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  font-family: "Rubik", Arial, Helvetica, sans-serif;
+  color: var(--color-body-text);
+  background-color: var(--color-body-bg);
+  background-image: var(--pattern-body-bg);
+  background-repeat: no-repeat;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+header {
+  display: grid;
+  grid-template-areas: "title . toggle";
+  grid-template-columns: min-content 1fr min-content;
+  width: calc(100% - 48px);
+  max-width: 640px;
+  min-height: 72px;
+  margin-inline: auto;
+  padding-block: 16px;
+}
+
+.quizz-title {
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  grid-area: title;
+  align-items: center;
+  gap: 16px;
+  min-height: 40px;
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1;
+  color: inherit;
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.quizz-title::before {
+  content: "";
+  position: relative;
+  height: 100%;
+  border-radius: 4px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 28px;
+}
+
+.quizz-title--html::before {
+  background-image: url("/images/icons/html.svg");
+  background-color: var(--color-light-orange);
+}
+
+.quizz-title--css::before {
+  background-image: url("/images/icons/css.svg");
+  background-color: var(--color-light-green);
+}
+
+.quizz-title--javascript::before {
+  background-image: url("/images/icons/js.svg");
+  background-color: var(--color-light-blue);
+}
+
+.quizz-title--accessibility::before {
+  background-image: url("/images/icons/accessibility.svg");
+  background-color: var(--color-light-purple);
+}
+
+@media (min-width: 768px) {
+  :root {
+    --pattern-body-bg: url("/images/patterns/bg-tablet-light.svg");
+  }
+
+  .dark-mode {
+    --pattern-body-bg: url("/images/patterns/bg-tablet-dark.svg");
+  }
+
+  header {
+    padding-top: 40px;
+    padding-bottom: 49px;
+  }
+
+  .quizz-title {
+    grid-template-columns: 56px 1fr;
+    gap: 24px;
+    min-height: 56px;
+    font-size: 28px;
+  }
+
+  .quizz-title::before {
+    border-radius: 8px;
+  }
+}
+
+@media (min-width: 1200px) {
+  :root {
+    --pattern-body-bg: url("/images/patterns/bg-desktop-light.svg");
+  }
+
+  .dark-mode {
+    --pattern-body-bg: url("/images/patterns/bg-desktop-dark.svg");
+  }
+
+  body {
+    background-size: cover;
+  }
+
+  header {
+    max-width: 1160px;
+    padding-top: 83px;
+    padding-bottom: 85px;
+  }
+}
