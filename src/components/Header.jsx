@@ -3,10 +3,10 @@ import QuizzTitle from "./QuizzTitle";
 import ThemeToggle from "./ThemeToggle";
 import styles from "./Header.module.css";
 
-export default function Header({ theme, setTheme, currentQuizz }) {
+export default function Header({ theme, setTheme, quizz }) {
   return (
     <header className={styles.header}>
-      {currentQuizz?.title && <QuizzTitle name={currentQuizz.title} />}
+      {quizz?.title && <QuizzTitle name={quizz.title} />}
       <ThemeToggle theme={theme} setTheme={setTheme} />
     </header>
   );
@@ -15,5 +15,5 @@ export default function Header({ theme, setTheme, currentQuizz }) {
 Header.propTypes = {
   theme: PropTypes.string,
   setTheme: PropTypes.func,
-  currentQuizz: PropTypes.object,
+  quizz: PropTypes.object,
 };
