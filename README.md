@@ -28,12 +28,21 @@ Users should be able to:
 
 ## Screenshot
 
+![](./screenshot.png)
+
 ## Links
 
 - [Solution URL](https://github.com/annaindistress/frontend-mentor-frontend-quiz-app)
 - [Live Site URL](https://annaindistress.github.io/frontend-mentor-frontend-quiz-app/)
 
 ## Built with
+
+- Semantic HTML5 markup
+- Mobile-first workflow
+- CSS custom properties
+- Vite
+- React
+- Custom Hooks
 
 ## Author
 
