@@ -1,0 +1,11 @@
+.container {
+  display: grid;
+  align-content: start;
+  gap: 12px;
+}
+
+@media (min-width: 768px) {
+  .container {
+    gap: 32px;
+  }
+}

@@ -1,0 +1,39 @@
+.info {
+  display: grid;
+  margin-bottom: 40px;
+}
+
+.quizz {
+  gap: 16px;
+}
+
+.question {
+  gap: 12px;
+}
+
+@media (min-width: 768px) {
+  .info {
+    margin-bottom: 64px;
+  }
+
+  .question {
+    gap: 27px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .info {
+    align-content: start;
+    margin-bottom: 0;
+  }
+
+  .quizz {
+    gap: 48px;
+  }
+
+  .question {
+    grid-template-rows: min-content 1fr min-content;
+    max-height: 456px;
+    margin-bottom: 112px;
+  }
+}

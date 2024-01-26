@@ -1,0 +1,59 @@
+.title {
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  grid-area: title;
+  align-items: center;
+  gap: 16px;
+  min-height: 40px;
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1;
+  color: inherit;
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.title::before {
+  content: "";
+  position: relative;
+  height: 100%;
+  border-radius: 4px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 28px;
+}
+
+.html::before {
+  background-image: url("/images/icons/html.svg");
+  background-color: var(--color-light-orange);
+}
+
+.css::before {
+  background-image: url("/images/icons/css.svg");
+  background-color: var(--color-light-green);
+}
+
+.javascript::before {
+  background-image: url("/images/icons/js.svg");
+  background-color: var(--color-light-blue);
+}
+
+.accessibility::before {
+  background-image: url("/images/icons/accessibility.svg");
+  background-color: var(--color-light-purple);
+}
+
+@media (min-width: 768px) {
+  .title {
+    grid-template-columns: 56px 1fr;
+    gap: 24px;
+    min-height: 56px;
+    font-size: 28px;
+  }
+
+  .title::before {
+    border-radius: 8px;
+  }
+}

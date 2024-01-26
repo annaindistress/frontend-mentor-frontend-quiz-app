@@ -1,0 +1,15 @@
+.main {
+  width: calc(100% - 48px);
+  max-width: 640px;
+  margin-inline: auto;
+  margin-bottom: 120px;
+}
+
+@media (min-width: 1200px) {
+  .main {
+    display: grid;
+    grid-template-columns: 465px 564px;
+    justify-content: space-between;
+    max-width: 1160px;
+  }
+}
